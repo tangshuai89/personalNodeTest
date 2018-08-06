@@ -1,5 +1,4 @@
 var strurl = "http://117.131.17.174:8000/pre/api/v1/cms/content-selectors";
-
 $(document).ready(function() {
 	initiliazeStats();
 
@@ -24,14 +23,14 @@ function changeDev(dev) {
 }
 
 function changeStyle(dev) {
-	$(".huanli, .online").removeClass('active');
+	$(".active").removeClass('active');
 	let activeClassName = '';
 	if (dev == "pre") {
-		activeClassName = 'pre';
+		activeClassName = '.pre';
 	} else if (dev == "dev") {
-		activeClassName = 'dev';
+		activeClassName = '.dev';
 	} else if (dev == "online") {
-		activeClassName = 'online';
+		activeClassName = '.online';
 	}
-	$(dev).addClass("active");
+	$(activeClassName).addClass("active");
 }
