@@ -6,11 +6,6 @@ function jokerRedunt(originalArray) {
   if (!originalArray) {
     return;
   }
-  
-  const times_num_H = 0,
-    times_num_S = 13,
-    times_num_D = 26,
-    times_num_C = 39;
 
   const times_num_collection = {
     'H': 0,
@@ -20,7 +15,7 @@ function jokerRedunt(originalArray) {
   };
 
   function replaceJQK(string) {
-    return new Number(string.replace('T', '10').replace('J', '11').replace('Q', '12').replace('K', '13')).valueOf();
+    return Number(string.replace('T', '10').replace('J', '11').replace('Q', '12').replace('K', '13')).valueOf();
   }
 
   var nums_store = [];
@@ -32,6 +27,17 @@ function jokerRedunt(originalArray) {
   });
 
   return Math.min.apply(null, nums_store);
+}
+
+/* ----------- test code ----------- */
+
+var testArray = [];
+var color = ['H', 'S', 'D', 'C'];
+
+for (var i = 0; i < 4; i++) {
+  for (var j = 1; j <= 13; j++) {
+    testArray.push((j.toString().replace('10', 'T').replace('11', 'J').replace('12', 'Q').replace('13', 'K')) + color[i]);
+  }
 }
 
 console.log(jokerRedunt(testArray));
